@@ -1,0 +1,193 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #182941;
+}
+.container {
+  box-sizing: border-box;
+  background-color: rgba(251, 249, 249, 0.911);
+  width: min(980px, calc(100% - 32px));
+  padding: 24px;
+  border-radius: 20px;
+  align-items: flex-start;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+}
+.container > :not(#ta):not(.thanks) {
+  box-sizing: border-box;
+  grid-column: 1;
+  width: auto;
+  min-width: 0;
+}
+h1 {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-weight: bolder;
+  color: #030405;
+}
+p {
+  color: rgb(9, 12, 12); /* تفتيح لون الخط قليلاً ليصبح مقروءاً */
+  font-weight: 400; /* جعل الخط أنعم وليس عريضاً */
+  line-height: 1.5; /* ترك مسافة مريحة بين أسطر الكلام */
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+#icon {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin-top: -10px;
+}
+.de {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+}
+.dd {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: -10px;
+}
+.ed {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: -10px;
+}
+#ta {
+  grid-column: 2;
+  grid-row: 1 / span 6;
+  transform: translateY(-10px);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+  margin: 0;
+}
+input {
+  border-color: #707070;
+  width: 80%;
+  height: 50px;
+  border-radius: 10px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+@media (max-width: 650px) {
+  .container {
+    width: calc(100% - 24px);
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .container > :not(#ta) {
+    grid-column: 1;
+    width: 100%;
+  }
+  #ta {
+    grid-column: 1;
+    grid-row: auto;
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: contain;
+  }
+}
+button{
+  background-color: #030405;
+  color: aliceblue;
+   border-color: #707070;
+  width: 80%;
+  height: 50px;
+  border-radius: 10px;
+  
+}
+.thanks{
+    box-sizing: border-box;
+  background-color: rgba(251, 249, 249, 0.911);
+  width: min(420px, 100%);
+  padding: 24px;
+  border-radius: 20px;
+  align-items: flex-start;
+  display: none;
+  gap: 10px;
+}
+.container.is-subscribed > .thanks {
+  display: grid;
+  width: min(420px, 100%);
+}
+  #ta .container.is-subscribed {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 16px;
+  background: transparent;
+  border-radius: 0;
+  gap: 0;
+}
+ #ta.is-subscribed {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 16px;
+  background: transparent;
+  border-radius: 0;
+  gap: 0;
+}
+.container.is-subscribed > :not(.thanks) {
+  display: none;
+}
+label{
+  display: flex;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-weight: bold;
+font-size: larger;
+justify-content: space-between;
+margin-bottom: 8px;
+}
+.error-text{
+  color: rgb(203, 40, 4);
+
+}
+.error-text.show{
+  display: block;
+}
